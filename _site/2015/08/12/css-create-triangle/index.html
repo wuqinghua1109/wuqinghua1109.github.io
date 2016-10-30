@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <title>使用CSS实现三角形</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="keywords" content="使用CSS实现三角形,前端开发, triangle,,Guovz" />
+    <meta name="description" content="使用CSS实现三角形, 前端开发, triangle, 类似三角形的形状的元素在网页中是比较常用的，我们可以用图片或者CSS元素达到我们想要的效果。这里主要是讲自己使用HTML+CSS实现三角形的一点心得。" />
+
+  <!--官方css引入-->
+  <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+
+  <!-- pithy样式引入 -->
+  <link rel="stylesheet" href="/jekyll-pithy/assets/stylesheet/pithy.css">
+
+  <!--bootstrap支持IE8-->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
+  <link rel="alternate" type="application/rss+xml" title="Guovz" href="http://127.0.0.1:4000/jekyll-pithy/feed.xml" />
+</head>
+
+<body>
+<!-- 导航菜单 -->
+  <nav class="navbar navbar-pithy" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#pithy-navbar" aria-expanded="false">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/jekyll-pithy/">Guovz</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="pithy-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/jekyll-pithy/">首页</a></li>
+                <li class="active"><a href="/jekyll-pithy/about/">About Me</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+  <div class="container page-content">
+    <div class="container">
+    <div class="col-md-9 col-content">
+        <div id="post-content" class="panel panel-pithy post">
+            <div class="panel-heading">
+                <h3 class="title">
+                  <i class="fa fa-bookmark-o"></i>使用CSS实现三角形
+                </h3>
+                <ul class="info">
+                    <li>作者：<span class="author">Jaylin</span></li>
+                    <li>最后编辑：2015年08月12日</li>
+                    <li>标签：
+                     
+                         <a class="tag" href="/jekyll-pithy/tag/#triangle">triangle</a>
+                     
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body content">
+                <p>类似三角形的形状的元素在网页中是比较常用的，我们可以用图片或者CSS元素达到我们想要的效果。这里主要是讲自己使用HTML+CSS实现三角形的一点心得。</p>
+
+<p>为了能够熟悉的使用HTML+CSS构建三角形，我们首先要熟悉以下代码以及代码所实现的效果：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>shape<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+      <span class="nc">.shape</span><span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">border-top</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+        <span class="nl">border-right</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+        <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="no">yellow</span><span class="p">;</span>
+        <span class="nl">border-left</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="no">green</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"shape"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="err">&lt;</span>/html
+</code></pre>
+</div>
+<p>这是一个HTML页面，我们定义一个class=shape的元素，为元素设置宽度和高度均为0，上下左右的border为100px并且用不同颜色填充，最终会有以下效果：</p>
+
+<p><img src="http://7xlgu7.com1.z0.glb.clouddn.com/shape_01.png" style="width:200px" /><br />
+可以观察到，上下左右的border都占有45度直角三角形区域，底为100px+100px，高为100px。</p>
+
+<p>如果我们希望实现如下图的三角形形状：</p>
+
+<p><img src="http://7xlgu7.com1.z0.glb.clouddn.com/shape_02.jpg" style="width:100px" /></p>
+
+<p>我们可以保留如下图中1或者2的位置：</p>
+
+<p><img src="http://7xlgu7.com1.z0.glb.clouddn.com/shape_03.jpg" style="width:200px" /></p>
+
+<p>我选择1区域，最终CSS如下:</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.shape01</span><span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="nl">border-top</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
+  <span class="nl">border-right</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>其他情况类似。</p>
+
+<p>希望我的理解方式能对大家有帮助 :)</p>
+
+            </div>
+            <!-- 文章分享 -->
+<div class="panel-footer operate">
+    <div class="pull-left">
+        <div class="ds-share flat" data-thread-key="/2015/08/12/css-create-triangle" data-title="使用CSS实现三角形" data-images=""
+             data-content="使用CSS实现三角形" data-url="/jekyll-pithyhttp://127.0.0.1:4000/2015/08/12/css-create-triangle/">
+            <div class="ds-share-inline">
+              <ul  class="ds-share-icons-16">
+
+                <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+                <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+                <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+                <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+              </ul>
+              <div class="ds-share-icons-more">
+              </div>
+            </div>
+         </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+        </div>
+        <!-- 评论 -->
+<div id="post-comment" class="panel panel-default">
+    <div class="panel-body">
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="/2015/08/12/css-create-triangle" data-title="使用CSS实现三角形" data-url="http://127.0.0.1:4000/2015/08/12/css-create-triangle/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:""};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
+</div>
+
+    </div>
+    <div class="col-md-3 col-sidebar">
+        <!-- 分类列表 -->
+<div class="panel panel-default categories">
+    <div class="panel-heading title">
+        文章分类
+    </div>
+    <div class="panel-body list">
+        <ul>
+          <li>
+              <a class="catelink" href="/jekyll-pithy/category/#all" data-target-cate="#all">
+                  所有分类&nbsp;<span class="count">[5]</span>
+              </a>
+          </li>
+          
+          <li>
+              <a class="catelink" href="/jekyll-pithy/category/#生活随笔" data-target-cate="#生活随笔">
+                  生活随笔&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/jekyll-pithy/category/#前端开发" data-target-cate="#前端开发">
+                  前端开发&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/jekyll-pithy/category/#数据库应用" data-target-cate="#数据库应用">
+                  数据库应用&nbsp;<span class="count">[2]</span>
+              </a>
+          </li>
+
+          
+          <li>
+              <a class="catelink" href="/jekyll-pithy/category/#Node开发" data-target-cate="#Node开发">
+                  Node开发&nbsp;<span class="count">[1]</span>
+              </a>
+          </li>
+
+          
+        </ul>
+    </div>
+</div>
+
+        <!-- tag列表 -->
+<div class="panel panel-default tags">
+    <div class="panel-heading title">
+        标签云
+    </div>
+    <div class="panel-body list">
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#信仰" data-target-cate="#信仰">
+                信仰
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#triangle" data-target-cate="#triangle">
+                triangle
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#ubuntu" data-target-cate="#ubuntu">
+                ubuntu
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#MySQL" data-target-cate="#MySQL">
+                MySQL
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#MongoDB" data-target-cate="#MongoDB">
+                MongoDB
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#install" data-target-cate="#install">
+                install
+            </a>
+        
+            <a class="taglink" href="/jekyll-pithy/tag/#node" data-target-cate="#node">
+                node
+            </a>
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+  </div>
+
+  <footer>
+  <div id="totop" class="totop">
+      <i class="fa fa-chevron-up"></i>
+  </div>
+</footer>
+
+
+  <!--官方JS引入-->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/jekyll-pithy/assets/script/pithy.js"></script>
+
+
+  <!-- 百度统计 -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+</body>
+</html>

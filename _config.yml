@@ -1,4 +1,4 @@
-#version
+ #version
 version: "1.0"
 
 permalink: /:year/:month/:day/:title/
@@ -8,7 +8,8 @@ title: "Guovz"
 email: pzhuwjl@qq.com
 description: "王继林的个人博客"
 keywords: "Guovz"
-
+# Gems
+gems: [jekyll-paginate]
 # 用户信息设置
 weibo_username: Guovz
 github_username: guovz
@@ -16,7 +17,7 @@ github_username: guovz
 # Markdown设置
 kramdown:
   input:  GFM
-  use_coderay: true
+  enable_coderay: true
   coderay:
     coderay_line_numbers:  nil
 
