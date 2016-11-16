@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "one"
-date: 2014-5-21
+title: "jekyll搭建"
+date: 2014-5-22
 excerpt: "jekyll搭建"
 tags: [sample post, readability, test]
 comments: true
